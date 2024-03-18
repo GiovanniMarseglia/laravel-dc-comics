@@ -17,12 +17,6 @@ class CrudController extends Controller
     }
 
 
-    public function indexdue()
-    {
-
-
-        return view("pages.create");
-    }
 
     /**
      * Show the form for creating a new resource.
