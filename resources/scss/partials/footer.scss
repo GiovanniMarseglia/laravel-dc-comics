@@ -1,0 +1,39 @@
+footer{
+    background-image: url("../img/footer-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    ul{
+        li{
+            color: grey;
+            cursor: pointer;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+
+
+    figure{
+        background-image: url("../img/dc-logo-bg.png");
+        width: 800px;
+        height: 100%;
+
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .deepfooter{
+        background-color: #303030;
+        button{
+            background-color: transparent;
+            border: 1px solid #0082F9;
+        }
+        span{
+            color: #0082F9;
+        }
+        img{
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
