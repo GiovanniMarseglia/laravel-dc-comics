@@ -9,4 +9,14 @@ class dc extends Model
 {
     protected $table = 'dc';
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'thumb',
+        'price',
+        'series',
+        'sale_date',
+        'type'
+    ];
 }

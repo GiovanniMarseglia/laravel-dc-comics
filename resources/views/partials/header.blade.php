@@ -9,7 +9,10 @@
 <nav>
     <div class="container d-flex justify-content-between align-items-center">
         <figure class="py-1 logo">
-            <img src="{{  Vite::asset('resources/img/dc-logo.png') }}" alt="">
+            <a href="/">
+                <img src="{{  Vite::asset('resources/img/dc-logo.png') }}" alt="">
+            </a>
+
         </figure>
 
         <div class="d-flex align-items-center gap-3 divnav">
@@ -24,6 +27,7 @@
                 <li>FANS</li>
                 <li>NEWS</li>
                 <li>SHOP</li>
+                <li><a href="/create">AGGIUNGI</a></li>
             </ul>
             <div class="inputheader d-flex">
                 <input type="text" placeholder="Search">

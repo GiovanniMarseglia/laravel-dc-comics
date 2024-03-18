@@ -17,7 +17,9 @@
                         <figure>
                             <img src= {{$element["thumb"]}}>
                         </figure>
-                            <span>{{$element["title"]}}</span>
+                            <a href="{{route('comic.show', ['comic' => $element['id']])}}">
+                                {{$element["title"]}}
+                            </a>
                     </div>
                 @endforeach
             </div>
@@ -64,6 +66,8 @@
                 <i><img src="{{  Vite::asset('resources/img/buy-dc-power-visa.svg') }}" alt=""></i>
                 <p>DC POWER VISA</p>
                 </li>
+
+
             </ul>
         </div>
 

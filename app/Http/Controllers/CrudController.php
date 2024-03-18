@@ -16,6 +16,14 @@ class CrudController extends Controller
         return view("pages.home",compact("comics"));
     }
 
+
+    public function indexdue()
+    {
+
+
+        return view("pages.create");
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -29,15 +37,26 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData = $request->all();
+
+
+        $newComic = new dc();
+        $newComic->fill($formData);
+
+
+        $newComic->save();
+
+        return redirect()->route('comic.show', ['comic' => $newComic->id]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(dc $comic)
     {
         //
+
+        return view("pages.single",compact("comic"));
     }
 
     /**
