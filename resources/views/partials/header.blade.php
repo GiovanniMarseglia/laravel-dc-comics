@@ -27,7 +27,7 @@
                 <li>FANS</li>
                 <li>NEWS</li>
                 <li>SHOP</li>
-                <li><a href="/create">AGGIUNGI</a></li>
+                <li><a href="{{route('comic.create')}}">AGGIUNGI</a></li>
             </ul>
             <div class="inputheader d-flex">
                 <input type="text" placeholder="Search">

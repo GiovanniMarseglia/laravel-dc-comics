@@ -17,7 +17,7 @@ use App\Http\Controllers\CrudController as CrudController;
 Route::get('/', [CrudController::class,'index']);
 Route::resource("comic", CrudController::class);
 
-Route::get('/create',[CrudController::class,'indexdue']);
+
 
 
 
