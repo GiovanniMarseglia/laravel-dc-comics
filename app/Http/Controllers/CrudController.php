@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\dc;
 use Illuminate\Http\Request;
 
 class CrudController extends Controller
@@ -11,7 +11,9 @@ class CrudController extends Controller
      */
     public function index()
     {
-        //
+
+        $comics = dc::All();
+        return view("pages.home",compact("comics"));
     }
 
     /**
