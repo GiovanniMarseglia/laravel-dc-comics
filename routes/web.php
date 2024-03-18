@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Guest\Pagecontroller as PageController;
+use App\Http\Controllers\CrudController as CrudController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ use App\Http\Controllers\Guest\Pagecontroller as PageController;
 |
 */
 
-Route::get('/', [PageController::class,'index']);
+Route::get('/', [CrudController::class,'index']);
