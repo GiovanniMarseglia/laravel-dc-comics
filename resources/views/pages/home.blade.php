@@ -13,7 +13,7 @@
 
             <div class="row row-cols-6 carte gy-5">
                 @foreach ($comics as $element)
-                    <div class="col">
+                    <div class="col d-flex flex-column justify-content-between align-items-center">
                         <figure>
                             <img src= {{$element["thumb"]}}>
                         </figure>
