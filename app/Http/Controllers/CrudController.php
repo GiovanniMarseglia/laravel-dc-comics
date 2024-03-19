@@ -48,17 +48,17 @@ class CrudController extends Controller
      */
     public function show(dc $comic)
     {
-        //
-
         return view("pages.single",compact("comic"));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(dc $comic)
     {
         //
+        return view("pages.edit",compact("comic"));
+
     }
 
     /**
@@ -66,7 +66,11 @@ class CrudController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $formData = $request->all();
+        $comic = dc::find($id);
+        $comic->update($formData);
+        return redirect()->route("comic.index",compact('comic'));
+
     }
 
     /**
@@ -74,6 +78,8 @@ class CrudController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $comic = dc::find($id);
+        $comic->delete();
+        return redirect()->route('comic.index');
     }
 }

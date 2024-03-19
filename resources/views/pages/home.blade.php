@@ -17,9 +17,21 @@
                         <figure>
                             <img src= {{$element["thumb"]}}>
                         </figure>
-                            <a href="{{route('comic.show', ['comic' => $element['id']])}}">
+                            <a href="{{route('comic.show', ['comic' => $element->id])}}">
                                 {{$element["title"]}}
                             </a>
+
+
+                            <form action="{{route('comic.destroy', $element->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Elimina</button>
+                            </form>
+
+
+
+                               <a class="btn btn-primary" href="{{ route('comic.edit', $element->id) }}">Edit</a>
+
                     </div>
                 @endforeach
             </div>
