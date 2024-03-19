@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\dc;
+use App\Models\Dc;
 use Illuminate\Http\Request;
 
 class CrudController extends Controller
@@ -12,7 +12,7 @@ class CrudController extends Controller
     public function index()
     {
 
-        $comics = dc::All();
+        $comics = Dc::All();
         return view("pages.home",compact("comics"));
     }
 
@@ -34,7 +34,7 @@ class CrudController extends Controller
         $formData = $request->all();
 
 
-        $newComic = new dc();
+        $newComic = new Dc();
         $newComic->fill($formData);
 
 
@@ -46,7 +46,7 @@ class CrudController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(dc $comic)
+    public function show(Dc $comic)
     {
         return view("pages.single",compact("comic"));
     }
@@ -54,7 +54,7 @@ class CrudController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(dc $comic)
+    public function edit(Dc $comic)
     {
         //
         return view("pages.edit",compact("comic"));
@@ -67,7 +67,7 @@ class CrudController extends Controller
     public function update(Request $request, string $id)
     {
         $formData = $request->all();
-        $comic = dc::find($id);
+        $comic = Dc::find($id);
         $comic->update($formData);
         return redirect()->route("comic.index",compact('comic'));
 
@@ -78,7 +78,7 @@ class CrudController extends Controller
      */
     public function destroy(string $id)
     {
-        $comic = dc::find($id);
+        $comic = Dc::find($id);
         $comic->delete();
         return redirect()->route('comic.index');
     }

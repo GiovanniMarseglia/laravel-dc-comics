@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\dc;
+use App\Models\Dc;
 
 class DcTableSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class DcTableSeeder extends Seeder
         $comics=config("comics");
         $id = 1;
         foreach ($comics as $comic) {
-            $newComic= new dc();
+            $newComic= new Dc();
             $newComic->id = $id;
             $id++;
             $newComic->title=$comic["title"];
