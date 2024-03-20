@@ -31,6 +31,17 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validatedData = $request->validate([
+            'title' => ['required', 'unique:posts', 'max:255'],
+            'description' => ['required'],
+            'thumb' => ['required'],
+            'price' => ['required'],
+            'series' => ['required'],
+            'sale_date' => ['required'],
+            'type' => ['required'],
+        ]);
+
         $formData = $request->all();
 
 
@@ -66,6 +77,18 @@ class CrudController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        $validatedData = $request->validate([
+            'title' => ['required', 'unique:posts', 'max:255'],
+            'description' => ['required'],
+            'thumb' => ['required'],
+            'price' => ['required'],
+            'series' => ['required'],
+            'sale_date' => ['required'],
+            'type' => ['required'],
+        ]);
+
+
         $formData = $request->all();
         $comic = Dc::find($id);
         $comic->update($formData);

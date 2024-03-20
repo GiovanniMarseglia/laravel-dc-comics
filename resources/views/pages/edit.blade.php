@@ -3,7 +3,24 @@
 
 
 
+
 @section('content')
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+
+
+
 <div class="container-fluid jumbo px-0">
     <div class="w-100 container2">
         <div class="container  d-flex justify-content-center">
